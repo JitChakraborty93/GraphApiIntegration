@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GraphAPiMailService",
+    "\\GraphAPiMailService\\GraphApiMailService",
+    "\\GraphAPiMailService\\GraphApiMailService\\GraphApiMailService"
   ],
+  "SelectedNode": "\\GraphAPiMailService\\GraphApiMailService\\GraphApiMailService\\Service1.cs",
   "PreviewInSolutionExplorer": false
 }
