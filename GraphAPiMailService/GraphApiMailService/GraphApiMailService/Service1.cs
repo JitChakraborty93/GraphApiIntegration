@@ -37,7 +37,7 @@ namespace GraphApiMailService
             string clientId = ConfigurationSettings.AppSettings["ClientId"].ToString();
             string ClientSecretId = ConfigurationSettings.AppSettings["ClientSecretId"].ToString();
             int TopFolderCount = Convert.ToInt32(ConfigurationSettings.AppSettings["TopFolderCount"].ToString());
-            int TopMailCount = Convert.ToInt32(ConfigurationSettings.AppSettings["TopMailCount"].ToString());
+          //  int TopMailCount = Convert.ToInt32(ConfigurationSettings.AppSettings["TopMailCount"].ToString());
             string MailboxReadfolder = ConfigurationSettings.AppSettings["MailboxReadfolder"].ToString();
             string MailboxArchivefolder = ConfigurationSettings.AppSettings["MailboxArchivefolder"].ToString();
             string LocalFoldarPathAttachment = ConfigurationSettings.AppSettings["LocalFoldarPathAttachment"].ToString();
@@ -61,7 +61,7 @@ namespace GraphApiMailService
                             if (subfolder.DisplayName == MailboxReadfolder)
                             {
                                 var subId = subfolder.Id.ToString();//you have to get the folder id to process further
-                                var fmessage = graphServiceClient.Users[username].MailFolders["Inbox"].ChildFolders[subId].Messages.Request().Top(TopMailCount).GetAsync().Result;
+                                var fmessage = graphServiceClient.Users[username].MailFolders["Inbox"].ChildFolders[subId].Messages.Request().GetAsync().Result;
                                 //TopFolderCount will set from app.config cause by default pick top 10 mails to fix this we need max mail count
                                 string mailid = string.Empty, cc = string.Empty, to = string.Empty, body = string.Empty, subject = string.Empty, subjectWithDate = string.Empty
                                 , fPath = string.Empty, from = string.Empty;
